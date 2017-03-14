@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meme Gene | Meme Generator</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="fb:app_id" content="1022355574512785">
+<meta name="description" content="Make a meme with text on top. Meme generator for Instagram, Facebook, Twitter, and Reddit.">
+<meta property="og:description" content="Make a meme with text on top. Meme generator for Instagram, Facebook, Twitter, and Reddit.">
+<meta name="twitter:description" content="Make a meme with text on top. Meme generator for Instagram, Facebook, Twitter, and Reddit.">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" href="./stylesheets/style.css">
+<link rel="icon" href="https://d1sui4xqepm0ps.cloudfront.net/static/blue.png" type="image/x-icon">
+<script src="/javascripts/social.js"></script>
+<script>ga('send', 'pageview');</script>
+</head>
+<body class="regular-nav">
+<nav class="navbar">
+	<div class="container">
+		<div class="nav-memes-column">
+			<div id="site-logo">
+				<a href="/" class="site-name bounce">
+					<span class="s s-bounce">S</span>
+					<span class="u u-bounce">u</span>
+					<span class="r r-bounce">r</span>
+					<span class="f f-bounce">f</span>
+				</a>
+				<div class="tagline">Today's Best Memes</div>
+				</div>
+				<div id="main-search">
+					<form action="/search" method="get">
+						<input type="text" name="q" placeholder="Search all the memes">
+					</form>
+				</div>
+				<a href="/generator" class="make-your-own">
+					<span class="large">Make a meme!</span>
+					<span class="small">+</span>
+				</a>
+				<a href="/search">
+				<div class="search-button">
+				</div>
+				</a>
+				<a href="https://m.me/dankland" target="_blank">
+				<iv class="fb-message-button"> 
+				<span class="long">Memes in Messenger!</span>
+				<span class="short">Make memes!</span>
+			</div>
+			</a>
+		</div>
+	</div>
+</nav>
+
+
+<div id="generator">
+  <div class="container">
+    <div id="meme-generator">
+      <div id="meme-tools-wrapper">
+        <div id="meme-tools">
+          <div id="meme-creator">
+            <div class="generator-field">
+				<h4>1. Add an image</h4>
+				<p>Drag an image onto the screen or upload a file.</p>
+				<form enctype="multipart/form-data">
+					<label for="image-file" class="custom-file-upload">
+						<span class="mobile-only">Take a Photo or </span>
+						<span>Upload an Image</span>
+					</label>
+					<input id="image-file" type="file">
+				</form>
+			</div>
+			<div class="generator-field">
+				<h4 class="lower-header add-text">2. Add text</h4>
+				<textarea id="memeTextArea" rows="1" width="355" placeholder="Type your text here"></textarea>
+			</div>
+<div class="generator-field">
+<h4 class="lower-header add-attribution">3. Add attribution <span>(optional)</span></h4>
+<input id="attribution" type="text" rows="1" width="355" maxlength="20" placeholder="@handle">
+</div>
+<div id="custom-template-field" class="generator-field">
+<form>
+<input id="custom-template" type="checkbox" name="template">
+<label for="custom-template">Create a meme generator for this image</label>
+</form>
+<div id="custom-template-name">
+<h4 class="lower-header custom-template-name">4. Name your generator</h4>
+<input id="templateName" type="text" rows="1" width="355" maxlength="30" placeholder="Meme template name">
+</div>
+</div>
+<div class="generator-field">
+<form>
+<input id="private-chec
+kbox" type="checkbox" name="hi				dden">
+<label for="rivate-checkbox">Keep unl			isted</la												bel>
+<			/form>
+</div>
+<button id="downloadButton" disabled class="btn btn-lg disabled">Generate your meme</button>
+<p style="margin-top:5px;line-height:1em;font-weight:300;">
+<br>
+<a href="/terms">terms</a>
+<span> | <a href="/privacy">privacy</a></span>
+</p>
+<p style="margin-top:5px;line-height:1.35em;font-weight:400;">
+<br>
+<span>You can also message photos to </span>
+<a href="http://m.me/Dankland" target="_blank">Dankland</a>
+<span> on Facebook Messenger. They'll automatically be turned into memes!</span>
+</p>
+</div>
+<div id="meme-zone">
+<canvas id="dankCanvas" width="640" height="640"></canvas>
+</div>
+</div>
+</div>
+</div>
+<div id="meme-categories">
+<h2>Trending Meme Generators<a href="/generators">View all</a></h2>
+<div class="category">
+<a href="/generator/roll-safe">
+<div class="category-title">roll safe</div>
+</a>
+<a href="/generator/roll-safe">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/she-not-gonna-ignore-your.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/roll-safe" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/nut-button">
+<div class="category-title">Nut Button</div>
+</a>
+<a href="/generator/nut-button">
+<div style="background-image:url(/images/nut-button.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/nut-button" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/trump-wall-button">
+<div class="category-title">Trump Wall Button</div>
+</a><a href="/generator/trump-wall-button">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/is-this-meme-racist-full.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/trump-wall-button" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/triggered">
+<div class="category-title">triggered</div>
+</a>
+<a href="/generator/triggered">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/categories/triggered)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/triggered" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/whisper-in-ear-goosebumps">
+<div class="category-title">Whisper in Ear Goosebumps</div>
+</a><a href="/generator/whisper-in-ear-goosebumps">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/-i-like-your-khaki-shorts.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/whisper-in-ear-goosebumps" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/confused-math-lady">
+<div class="category-title">Confused Math Lady</div>
+</a>
+<a href="/generator/confused-math-lady">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/when-you-try-to-read-the-.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/confused-math-lady" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/arthur">
+<div class="category-title">Arthur</div>
+</a>
+<a href="/generator/arthur">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/when-she-wants-someone-to-full.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/arthur" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/shaq-sing-2">
+<div class="category-title">Shaq Sing</div>
+</a>
+<a href="/generator/shaq-sing-2">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/mayday-parade-please-unde.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/shaq-sing-2" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/this-is-where-the-fun-beg">
+<div class="category-title">This is where the fun begins</div>
+</a>
+<a href="/generator/this-is-where-the-fun-beg">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/when-your-jerking-off-and.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/this-is-where-the-fun-beg" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/wtf">
+<div class="category-title">wtf</div>
+</a>
+<a href="/generator/wtf">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/when-your-mom-says-yaass--full.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/wtf" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/crying-chihuahua">
+<div class="category-title">Crying Chihuahua</div>
+</a>
+<a href="/generator/crying-chihuahua">
+<div style="background-image:url(/images/chihuahua.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/crying-chihuahua" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/thats-where-youre-wrong-2">
+<div class="category-title">thats where youre wrong kiddo</div>
+</a>
+<a href="/generator/thats-where-youre-wrong-2">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/-mas-stora-nao-pode-entre.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/thats-where-youre-wrong-2" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/roll-safe-meme-generator">
+<div class="category-title">Roll Safe Meme Generator</div>
+</a>
+<a href="/generator/roll-safe-meme-generator">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/you-can-t-disappoint-yo-2.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/roll-safe-meme-generator" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/am-i-disabled">
+<div class="category-title">Am I disabled </div>
+</a>
+<a href="/generator/am-i-disabled">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/when-you-laugh-at-a-2009-.jpg)" class="category-image"></div>
+</a>
+<a href="/category/am-i-disabled" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/mr-krabs">
+<div class="category-title">Mr Krabs</div></a>
+<a href="/generator/mr-krabs">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/hillary+blur+2.jpg)" class="category-image">	
+</div>
+</a>
+<a href="/category/mr-krabs" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/caveman-spongebob">
+<div class="category-title">Caveman SpongeBob</div>
+</a>
+<a href="/generator/caveman-spongebob">
+<div style="background-image:url(/images/caveman-spongebob.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/caveman-spongebob" class="view-category-link">View all</a>
+</div>
+<div class="category"><a href="/generator/tumblr">
+<div class="category-title">Tumblr</div>
+</a>
+<a href="/generator/tumblr">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/categories/tumblr)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/tumblr" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/y-tho">
+<div class="category-title">
+Y tho
+</div>
+</a>
+<a href="/generator/y-tho">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/y+tho+hillary.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/y-tho" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/kermit-2">
+<div class="category-title">kermit</div>
+</a>
+<a href="/generator/kermit-2">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/me-the-medic-ubered-me-i--full.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/kermit-2" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/crying-jordan">
+<div class="category-title">Crying Jordan</div>
+</a>
+<a href="/generator/crying-jordan">
+<div style="background-image:url(/images/cryingjordan.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/crying-jordan" class="view-category-link">View all</a>
+</div>
+
+</div>
+<div id="meme-categories">
+<h2>
+Featured Meme Generators
+<a href="/generators">View all</a>
+</h2>
+<div class="category">
+<a href="/generator/gnome-child">
+<div class="category-title">Gnome Child</div>
+</a>
+<a href="/generator/gnome-child">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/8+bit+gnome+hillary.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/gnome-child" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/persian-cat-room-guardian">
+<div class="category-title">Persian Cat Room Guardian</div>
+</a>
+<a href="/generator/persian-cat-room-guardian">
+<div style="background-image:url(/images/persiancat.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/persian-cat-room-guardian" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/renaissance-art">
+<div class="category-title">Renaissance Art</div>
+</a>
+<a href="/generator/renaissance-art">
+<div style="background-image:url(/images/art.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/renaissance-art" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/bernie-sanders">
+<div class="category-title">Bernie Sanders</div>
+</a>
+<a href="/generator/bernie-sanders">
+<div style="background-image:url(/images/bernie.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/bernie-sanders" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/disaster-girl">
+<div class="category-title">Disaster Girl</div>
+</a>
+<a href="/generator/disaster-girl">
+<div style="background-image:url(/images/disastergirl.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/disaster-girl" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/bentley-driver">
+<div class="category-title">Bentley Driver</div>
+</a>
+<a href="/generator/bentley-driver">
+<div style="background-image:url(/images/bentleydriver.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/bentley-driver" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/harold">
+<div class="category-title">Harold</div>
+</a>
+<a href="/generator/harold">
+<div style="background-image:url(/images/harold.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/harold" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/hillary-clinton">
+<div class="category-title">Hillary Clinton</div>
+</a>
+<a href="/generator/hillary-clinton">
+<div style="background-image:url(/images/hillary.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/hillary-clinton" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/barack-obama">
+<div class="category-title">Barack Obama</div>
+</a>
+<a href="/generator/barack-obama">
+<div style="background-image:url(/images/obama.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/barack-obama" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/tea-kermit">
+<div class="category-title">Kermit Drinking Tea</div>
+</a>
+<a href="/generator/tea-kermit">
+<div style="background-image:url(/images/teakermit.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/tea-kermit" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/donald-trump">
+<div class="category-title">Donald Trump</div>
+</a>
+<a href="/generator/donald-trump">
+<div style="background-image:url(/images/trump.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/donald-trump" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/dat-boi">
+<div class="category-title">dat boi</div>
+</a>
+<a href="/generator/dat-boi">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/datboi+hillary+office.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/dat-boi" class="view-category-link">View all</a>
+</div>
+<div class="category"><a href="/generator/crying-chihuahua">
+<div class="category-title">Crying Chihuahua</div>
+</a>
+<a href="/generator/crying-chihuahua">
+<div style="background-image:url(/images/chihuahua.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/crying-chihuahua" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/garlic-bread">
+<div class="category-title">Garlic Bread</div>
+</a>
+<a href="/generator/garlic-bread">
+<div style="background-image:url(/images/garlic-bread.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/garlic-bread" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/spongebob">
+<div class="category-title">SpongeBob</div>
+</a>
+<a href="/generator/spongebob">
+<div style="background-image:url(/images/spongebob.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/spongebob" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/caveman-spongebob">
+<div class="category-title">Caveman SpongeBob</div>
+</a><a href="/generator/caveman-spongebob">
+<div style="background-image:url(/images/caveman-spongebob.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/caveman-spongebob" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/pepe">
+<div class="category-title">Rare Pepe</div>
+</a>
+<a href="/generator/pepe">
+<div style="background-image:url(/images/pepe.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/pepe" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/crying-jordan">
+<div class="category-title">Crying Jordan</div>
+</a>
+<a href="/generator/crying-jordan">
+<div style="background-image:url(/images/cryingjordan.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/crying-jordan" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/mr-krabs">
+<div class="category-title">Mr Krabs</div>
+</a>
+<a href="/generator/mr-krabs">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/hillary+blur+2.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/mr-krabs" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/boss-bitch">
+<div class="category-title">Boss Bitch</div>
+</a>
+<a href="/generator/boss-bitch">
+<div style="background-image:url(/images/boss-bitch.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/boss-bitch" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/arthur">
+<div class="category-title">Arthur</div>
+</a>
+<a href="/generator/arthur">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/when-she-wants-someone-to-full.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/arthur" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/confused-guy">
+<div class="category-title">Confused Guy</div>
+</a>
+<a href="/generator/confused-guy">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/confused-guy-hillary.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/confused-guy" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/nut-button">
+<div class="category-title">Nut Button</div>
+</a>
+<a href="/generator/nut-button">
+<div style="background-image:url(/images/nut-button.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/nut-button" class="view-category-link">View all</a>
+</div>
+<div class="category">
+<a href="/generator/y-tho">
+<div class="category-title">Y tho</div>
+</a>
+<a href="/generator/y-tho">
+<div style="background-image:url(https://d1sui4xqepm0ps.cloudfront.net/y+tho+hillary.jpg)" class="category-image">
+	
+</div>
+</a>
+<a href="/category/y-tho" class="view-category-link">View all</a>
+</div>
+</div>
+<script>
+
+$( window ).resize(function() {
+	$('.category-image').height($('.category-image').width());
+});
+
+</script>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.6.0/js/canvas-to-blob.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.2/fabric.min.js"></script>
+<script src="./javascripts/textbox.js"></script>
+<script src="./javascripts/EXIF.js"></script>
+<script src="./javascripts/generator.js"></script>
+</body>
+</html>
